@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#0c1310">
-<title>永恆傳承 M0 — v0.7</title>
+<title>永恆傳承 M0 — v0.7.1</title>
 <style>
 :root{
   --night:#0c1310; --night-2:#131e18; --night-3:#1b2a21;
@@ -190,7 +190,7 @@ h1{font-size:20px;letter-spacing:6px;text-align:center;font-weight:normal}
 <div class="screen show" id="scr-select">
   <div id="sel-wrap">
     <h1>永恆傳承</h1>
-    <div class="sub">ETERNAL LEGACY · M0 原型 v0.7</div>
+    <div class="sub">ETERNAL LEGACY · M0 原型 v0.7.1</div>
     <div id="slots"></div>
   </div>
   <div id="sel-foot">
@@ -2833,7 +2833,7 @@ function playerDies(){
 }
 
 /* ============ 技能 ============ */
-function canSk1(){const c=CLASSES[P.cls].sk1;return inCombat&&P.resVal>=c.cost&&!(c.kind==="prime"&&P.sk1Primed);}
+function canSk1(){const c=CLASSES[P.cls].sk1;return inCombat&&P.resVal>=c.cost&&!(c.kind==="prime"&&P.sk1Primed)&&(c.kind==="prime"||targetIdx()>=0);}
 function canSk3(){const c=CLASSES[P.cls].sk3;return inCombat&&P.resVal>=c.cost&&now>=P.sk3ReadyAt;}
 function useSk1(){
   const c=CLASSES[P.cls].sk1;
